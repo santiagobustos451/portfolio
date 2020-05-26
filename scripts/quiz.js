@@ -117,10 +117,10 @@ function funcion_topnav() {
       ]
     },
     {
-      question: '¿De qué depende la aceleración? :^)',
+      question: '¿Cuánto es 654823 ^ 5623?',
       answers: [
-        { text: 'Distancia, tiempo y velocidad inicial', correct: false },
-        { text: 'Velocidad inicial, velocidad final y tiempo', correct: false },
+        { text: 'Distancia, tiempo y velocidad inicial :^)', correct: false },
+        { text: '34562465782', correct: false },
         { text: '¯\_(ツ)_/¯', correct: true }
       ]
     },
