@@ -113,15 +113,15 @@ function funcion_topnav() {
         { text: 'Santiago Bustos', correct: true },
         { text: 'Banti Sustos', correct: false },
         { text: 'Batman', correct: false },
-        { text: 'My name is Jeff', correct: false }
+        { text: 'Jeff', correct: false }
       ]
     },
     {
       question: '¿De qué depende la aceleración? :^)',
       answers: [
         { text: 'Distancia, tiempo y velocidad inicial', correct: false },
-        { text: 'Velocidad inicial, velocidad final y tiempo', correct: true },
-        { text: 'Ambas son correctas', correct: false }
+        { text: 'Velocidad inicial, velocidad final y tiempo', correct: false },
+        { text: '¯\_(ツ)_/¯', correct: true }
       ]
     },
     {
