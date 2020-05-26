@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My name is Santiago Bustos.</title>
+    <link rel="stylesheet" href="../assets/css/madlibs.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans&display=swap');
+    </style>
+    <script defer src="../scripts/madlibs.js"></script> 
+</head>
+<body>
+    <img class="img-bannerbig" src="../images/banner_big.png" alt="bigbanner">
+    <img class="img-bannersmall" src="../images/banner_small.png" alt="smallbanner">
+    <div class="topnav" id="myTopnav">
+        <a href="../index.html">Inicio</a>
+        <a href="./quiz.html">Quiz</a>
+        <a href="./timer.html">Timer</a>
+        <a href="" class="active">Madlibs!</a>
+        <a href="./snake.html">Snake Game</a>
+        <a href="javascript:void(0);" class="icon" onclick="funcion_topnav()">≡</a>
+    </div>
+    <div class="wrapper">
+        <article class="portfolio">
+            <h2>¡Crea tu historia con un juego de Madlibs!</h2>
+            <p>Esta es tu historia:</p>
+            <div class="historia" id="historia">
+                
+            </div>
+            
+            <div class="boton"><a href="./madlibs.html" class="btn">Volver a empezar</a> </div>
+        </article>
+    </div>
+    <footer class="contact-info">
+        <p>Contacto: <a href="mailto:santiagobustos451@gmail.com" target="_top">santiagobustos451@gmail.com</a> </p>
+        
+
+    </footer>
+    <script>
+        var url_string = window.location.href
+        var url = new URL(url_string);
+        var a = url.searchParams.get("a");
+        var b = url.searchParams.get("b");
+        var c = url.searchParams.get("c");
+        var d = url.searchParams.get("d");
+        var e = url.searchParams.get("e");
+        var f = url.searchParams.get("f");
+        var g = url.searchParams.get("g");
+        let historia = document.getElementById("historia")
+        historia.textContent = a + " acaba de recibir una oferta de trabajo como "+ b +", ganando "+c+" pesos la hora. \"¡"+ d +"!\", dice contrariado. Su nuevo trabajo lo obliga a "+e+" y fabricar "+f+" "+g+".";
+    </script>
+</body>
+</html>

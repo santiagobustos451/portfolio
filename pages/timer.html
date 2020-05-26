@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz!</title>
+    <link rel="stylesheet" href="../assets/css/timer.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans&display=swap');
+    </style> 
+    <script defer src="../scripts/timer.js"></script>
+</head>
+<body>
+    <img class="img-bannerbig" src="../images/banner_big.png" alt="bigbanner">
+    <img class="img-bannersmall" src="../images/banner_small.png" alt="smallbanner">
+    <div class="topnav" id="myTopnav">
+        <a href="../index.html">Inicio</a>
+        <a href="./quiz.html">Quiz</a>
+        <a href="" class="active">Timer</a>
+        <a href="./madlibs.html">Madlibs!</a>
+        <a href="./snake.html">Snake Game</a>
+        <a href="javascript:void(0);" class="icon" onclick="funcion_topnav()">≡</a>
+    </div>
+    <div class="wrapper">
+        <div class="stopwatch">00:00:00</div>
+          <div class="controls">
+            <button onclick="start()" class="start-btn btn">Iniciar</button>
+            <button onclick="pause()" class="pause-btn btn">Pausar</button>
+            <button onclick="stop()" class="stop-btn btn">Detener</button>
+            <button onclick="restart()" class="reset-btn btn">Reiniciar</button>  
+            <button onclick="lap()" class="lap-btn btn">Vuelta</button>
+            <button onclick="resetlaps()" class="resetlaps-btn btn">Reiniciar Vueltas</button>  
+          </div>    
+          <ul class="laps">
+        </ul>
+    </div>
+    
+    <footer class="contact-info">
+        <p>Contacto: <a href="mailto:santiagobustos451@gmail.com" target="_top">santiagobustos451@gmail.com</a> </p>
+        
+
+    </footer>
+
+    
+</body>
+</html>

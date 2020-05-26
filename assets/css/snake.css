@@ -2,6 +2,79 @@
     margin: 0;
     padding: 0;
 }
+.article {
+    padding: 60px;
+}
+.margen {
+    padding: 60px;
+    color: white;
+}
+.grid {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    border-style: solid;
+  }
+  
+  
+  .grid div {
+    width: 30px;
+    height: 30px;
+  }
+  .controlgrid {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .controlgrid div {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .snake {
+    background-image: radial-gradient(circle, rgb(73, 211, 96), rgb(69, 148, 67));
+    border-radius: 10px;
+   
+  }
+  
+  .apple {
+    background-image: radial-gradient(circle, rgb(255, 93, 93), rgb(207, 13, 13));
+    border-radius: 10px;
+  }
+.boton {
+    padding: 20px 0px;
+}
+.btnc {
+    border: 0px solid black;
+    background-color: black;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 50px;
+    text-align: center;
+    vertical-align: center;
+  }
+  .btnc:hover {
+    background-color: #333;
+  }
+.btn {
+    border: 0px solid black;
+    background-color: black;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 20px;
+  }
+  
+  .btn:hover {
+    background-color: #333;
+  }
 /* topnav*/
 
 .topnav {
@@ -65,10 +138,6 @@
     padding: 0;
 }
 
-.wrapper {
-    width: 100%;
-}
-
 .img-bannerbig {
     display: none;
 }
@@ -78,11 +147,11 @@
     vertical-align: bottom;
 }
 
-.portfolio{
+.wrapper{
     width: 100%;
     font-family: 'Open Sans';
 }
-.portfolio h2{
+.wrapper h2{
     padding: 30px 30px 20px;
     font-family: 'Montserrat';
     font-weight: 500;
@@ -90,31 +159,7 @@
     color: #111111;
     line-height: 44px;
 }
-.portfolio p{
-    padding: 30px 30px 20px;
-    font-weight: 300;
-    font-size: 20px;
-    color: #111111;
-    line-height: 25px;
-}
-.portfolio ul{
-    padding: 30px 30px 20px 70px;
-    font-weight: 400;
-    font-size: 20px;
-    color: #111111;
-    line-height: 25px;
-}
-.portfolio ol{
-    padding: 30px 30px 100px 70px;
-    font-weight: 400;
-    font-size: 20px;
-    color: #111111;
-    line-height: 25px;
-}
-.img-profile {
-    padding: 30px 0px 20px;
-    width: 100%;
-}
+
 /*estilo del footer*/
 .contact-info {
     color: lightgray;
@@ -141,58 +186,13 @@
         width: 700px;
         margin: 0 auto;
     }
-    .portfolio h2{
+    .wrapper h2{
         padding: 30px 0px 0px;
         font-size: 50px;
         line-height: 54px;
     }
-    .portfolio p{
-        padding: 30px 0px 0px;
-        font-size: 20px;
-        line-height: 25px;
-    }
-    .portfolio ul{
-        padding: 30px 0px 0px 70px;
-        font-size: 20px;
-        line-height: 25px;
-    }
-    .portfolio ol{
-        padding: 30px 0px 100px 70px;
-        font-size: 20px;
-        line-height: 25px;
-    }
-    .img-profile {
-        padding: 30px 0px 0px;
-        width: 100%;
-    }
 }
-/*cambio con pantalla de pc*/
-@media only screen and (min-width:1100px){
-    .wrapper {
-        width: 1000px;
-    }
-    .portfolio {
-        width: 50%;
-        float: right;
-    }
-    .portfolio h2 {
-        padding: 20px 0px 0px 30px;
-    }
-    .portfolio p {
-        padding: 20px 0px 0px 30px;
-    }
-    .portfolio ul {
-        padding: 20px 0px 0px 70px;
-    }
-    .portfolio ol {
-        padding: 20px 0px 100px 70px;
-    }
-    .img-profile {
-        padding-bottom: 20px;
-        width: 50%;
-        float: left;
-    }
-}
+
 
 /*sticky footer*/
 .page-wrap {
