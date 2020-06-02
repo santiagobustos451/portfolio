@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+.iframe {
+  padding-top: 20px;
+}
+
 /*botones*/
 
 .btn {
