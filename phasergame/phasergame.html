@@ -78,8 +78,8 @@ function preload ()
 function create ()
 {
     //Sonidos
-    music = this.sound.add('bgm', {loop: true, volume:.15});
-    music.play();
+    //music = this.sound.add('bgm', {loop: true, volume:.15});
+    //music.play();
 
     
     //  A simple background for our game
@@ -189,7 +189,7 @@ function update ()
     if (gameOver == true)
     
     {
-        music.stop();
+        //music.stop();
         if(jump||restart2||restart3){
             this.scene.restart();
             this.physics.resume();
