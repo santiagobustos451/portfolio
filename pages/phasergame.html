@@ -52,10 +52,6 @@ var restart2;
 var restart3;
 var xSpeed = 0;
 var i=0;
-var sfx_jump;
-var sfx_hit;
-var sfx_pickup;
-var music; 
 
 var game = new Phaser.Game(config);
 
@@ -67,21 +63,10 @@ function preload ()
     this.load.image('gem', '../assets/gem.png');
     this.load.image('bomb', '../assets/bomb.png');
     this.load.spritesheet('dude', '../assets/dude.png', { frameWidth: 32, frameHeight: 48 });
-
-    this.load.audio('sfx_jump', '../assets/sfx/jump.wav');
-    this.load.audio('sfx_hit', '../assets/sfx/hit.wav');
-    this.load.audio('sfx_pickup', '../assets/sfx/pickup.wav');
-    this.load.audio('sfx_pickup2', '../assets/sfx/pickup2.wav');
-    this.load.audio('bgm', '../assets/sfx/bgm.wav');
 }
 
 function create ()
 {
-    //Sonidos
-    music = this.sound.add('bgm', {loop: true, volume:.15});
-    music.play();
-
-    
     //  A simple background for our game
     this.add.image(400, 300, 'sky');
 
@@ -90,7 +75,7 @@ function create ()
 
     //  Here we create the ground.
     //  Scale it to fit the width of the game (the original sprite is 400x32 in size)
-    platforms.create(400, 568, 'ground').setScale(2.5).refreshBody();
+    platforms.create(400, 568, 'ground').setScale(2).refreshBody();
 
     //  Now let's create some ledges
     platforms.create(800, 400, 'ground');
@@ -147,7 +132,7 @@ function create ()
         //  Give each star a slightly different bounce
         child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
         child.y = Phaser.Math.Between(0,400);
-        
+
 
     });
     gems.children.iterate(function (child) {
@@ -160,14 +145,14 @@ function create ()
         child.setCollideWorldBounds(true);
         child.setVelocityX(i*Phaser.Math.Between(50,200));
         child.y = Phaser.Math.Between(0,500);
-        
+
     });
 
     bombs = this.physics.add.group();
 
     //  The score
     scoreText = this.add.text(16, 16, 'Score: 0', { font: '32px Raleway'});
-    scoreText.setTint(0xFFF682);
+    scoreText.setTint(0x003366);
 
     //  Collide the player and the stars with the platforms
     this.physics.add.collider(player, platforms);
@@ -187,13 +172,10 @@ function update ()
     restart2 = Phaser.Input.Keyboard.JustDown(cursors.left);
     restart3 = Phaser.Input.Keyboard.JustDown(cursors.right);
     if (gameOver == true)
-    
     {
-        music.stop();
         if(jump||restart2||restart3){
             this.scene.restart();
             this.physics.resume();
-            //music.play();
             gameOver = false;
         }
     }
@@ -206,7 +188,7 @@ function update ()
         else if (xSpeed>0){
             xSpeed -= 50;
         }    
-        
+
         //player.setVelocityX(xSpeed);
 
         player.anims.play('left', true);
@@ -239,11 +221,10 @@ function update ()
     }
     player.setVelocityX(xSpeed);
     //console.log(xSpeed);
-    
+
     if (jump && jumpsleft != 0)
     {   
         player.setVelocityY(-430);
-        this.sound.play('sfx_jump');
         --jumpsleft;
     }
     if (player.body.touching.down){
@@ -255,7 +236,7 @@ function update ()
 function collectStar (player, star)
 {
     star.disableBody(true, true);
-    this.sound.play('sfx_pickup2');
+
     //  Add and update the score
     score += 20;
     scoreText.setText('Score: ' + score);
@@ -300,7 +281,7 @@ function collectStar (player, star)
 function collectGem (player, gem)
 {
     gem.disableBody(true, true);
-    this.sound.play('sfx_pickup');
+
     //  Add and update the score
     score += 15;
     scoreText.setText('Score: ' + score);
@@ -309,27 +290,20 @@ function collectGem (player, gem)
     {
         //  A new batch of stars to collect
         gems.children.iterate(function (child) {
-
             child.enableBody(true, child.x, 0, true, true);
-
         });
-
         var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
-
         var bomb = bombs.create(x, 16, 'bomb');
         bomb.setBounce(1);
         bomb.setCollideWorldBounds(true);
         bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
         bomb.allowGravity = false;
-
     }*/
 }
 
 function hitBomb (player, bomb)
 {
     this.physics.pause();
-
-    this.sound.play('sfx_hit');
 
     player.setTint(0xff0000);
 
@@ -344,4 +318,4 @@ function hitBomb (player, bomb)
 </script>
 
 </body>
-</html>
+</html> 
